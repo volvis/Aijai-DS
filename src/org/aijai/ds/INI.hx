@@ -172,7 +172,10 @@ abstract INICategory(Map<String,String>)
 			{
 				return Default;
 			}
-			return i;
+			else
+			{
+				return i;
+			}
 		}
 		else
 		{			
@@ -196,7 +199,9 @@ abstract INICategory(Map<String,String>)
 	public inline function requestMultipart(Variable:String):INIMultipart
 	{
 		var outAr:Array<INIVariable> = new Array<INIVariable>();
-		for (str in Std.string(this).split(" "))
+		var v:String = request(Variable, null);
+		var ar:Array<String> = v.split(" ");
+		for (str in ar.iterator())
 		{
 			outAr.push(new INIVariable(str));
 		}
