@@ -271,7 +271,7 @@ abstract INIVariable(String)
 	
 	public inline function toBool(Default:Bool = false):Bool
 	{
-		if (this.toString() == "1" || this.toString() == "true")
+		if (this == "1" || this == "true")
 		{
 			return true;
 		}
@@ -281,7 +281,7 @@ abstract INIVariable(String)
 		}
 	}
 	
-	public inline function toString(Default:String = ""):String
+	@:to public inline function toString():String
 	{
 		return this;
 	}
